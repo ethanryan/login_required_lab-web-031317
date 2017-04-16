@@ -1,4 +1,36 @@
 Rails.application.routes.draw do
+
+  # get "/songs", to: "songs#index"
+  # get "/songs/new", to: "songs#new", as: "new_song"
+  # post "/songs", to: "songs#create"
+  # get "/songs/:id", to: "songs#show", as: "song"
+  # get "/songs/:id/edit", to: "songs#edit", as: "edit_song"
+  # patch "/songs/:id", to: "songs#update"
+  #add delete!!!, and maybe need to add password stuff too?
+
+
+  # Our app has three pages:
+  #
+  # 1) A login page, where the user enters their username.
+  # No passwords; we'll just trust them. After they're logged in,
+  # users are taken to...
+  #
+  # 2) A user homepage, which says, "Hi, #{username}",
+  # and has a link to the secret page, which is...
+  #
+  # 3) A page with a secret on it, which users must be logged in to see.
+  #
+
+#  get "/", to: redirect("/sessions/new") #this redirects the welcome page to the login page
+
+#  get "/sessions", to: "sessions#index"
+  get "/sessions/new", to: "sessions#new", as: "new_session"
+  post "/sessions", to: "sessions#create"
+
+  get "/sessions/show", to: "sessions#show", as: "hello"
+  post "/logout", to: "sessions#destroy", as: "logout"
+
+  get "/secrets/show", to: "secrets#show", as: "secret"
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
